@@ -1,0 +1,13 @@
+# filepath: c:\Users\Admin\investment\docker-compose.yml
+version: '3.8'
+
+services:
+  investment-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80" # Map port 80 in the container to port 8080 on the host
+    volumes:
+      - .:/usr/share/nginx/html # Mount the current directory to the Nginx public directory
+    container_name: investment-app
